@@ -7,6 +7,8 @@ const request = axios.create({
 
 // 请求拦截器
 request.interceptors.request.use(config => {
+  //请求发出之前配置请求头信息 添加token验证的Authorization字段
+  config.headers.Authorization = window.sessionStorage.getItem("token");
   return config;
 });
 

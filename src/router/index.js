@@ -23,28 +23,31 @@ const routes = [
   },
   {
     path: "/layout",
-    exact: true,
     component: LQLayout,
-    render: () => <Redirect to="/home" />,
     routes: [
       {
-        path: "/home",
+        path: "/layout",
+        exact: true,
+        render: () => <Redirect to="/layout/home" />
+      },
+      {
+        path: "/layout/home",
         component: LQHome
       },
       {
-        path: "/user",
+        path: "/layout/user",
         component: LQUser
       },
       {
-        path: "/power",
+        path: "/layout/power",
         component: LQPower
       },
       {
-        path: "/goods",
+        path: "/layout/goods",
         component: LQGoods
       },
       {
-        path: "/report",
+        path: "/layout/report",
         component: LQReport
       }
     ]
